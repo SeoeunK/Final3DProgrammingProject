@@ -26,7 +26,7 @@
                 vec3 pos = position;
 
                 // Move rain downward over time
-                pos.y -= mod(time * 2.0, 12.0);
+                pos.y -= mod(time * 7.0, 12.0);
 
                 // Wrap rain back to top if it falls too low
                 if (pos.y < -1.0) {
@@ -221,17 +221,19 @@
       };
 
       // Create rain triangles
-      function createRainMesh(scene) {
+      function createRainMesh(scene, dropCount, radius) {
         var vertexData = new BABYLON.VertexData();
         var positions = [],
           indices = [],
           uvs = [];
         var index = 0;
 
-        for (var i = 0; i < 100; i++) {
-          var cx = Math.random() * 10 - 5;
-          var cy = Math.random() * 10;
-          var cz = Math.random() * 10 - 5;
+        for (var i = 0; i < dropCount; i++) {}
+
+        for (var i = 0; i < 400; i++) {
+          var cx = Math.random() * 20 - 10;
+          var cy = Math.random() * 20;
+          var cz = Math.random() * 20 - 10;
 
           var size = 0.14;
 
